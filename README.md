@@ -3,6 +3,9 @@
 Reads messages from the Windows debugger.
 
 
+![Windows](https://img.shields.io/badge/OS-Windows-0078D6?style=flat&logo=windows&logoColor=white)
+
+
 ## Project Information
 
 

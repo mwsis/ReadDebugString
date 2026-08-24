@@ -8,7 +8,6 @@ CMakeDir=${SIS_CMAKE_BUILD_DIR:-$Dir/_build}
 if [[ -n "$MSYSTEM" ]]; then
 
   DefaultMakeCmd=mingw32-make.exe
-  MinGW=1
 else
 
   DefaultMakeCmd=make
@@ -25,7 +24,7 @@ Verbose=0
 # ##########################################################
 # colours
 
-if command -v tput > /dev/null; then
+if [ -n "${TERM:-}" ] && [ -t 1 ] && command -v tput >/dev/null 2>&1; then
 
   SisClr_Blue=${FG_BLUE:-$(tput setaf 4)}
   SisClr_Red=${FG_RED:-$(tput setaf 1)}

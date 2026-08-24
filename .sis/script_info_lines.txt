@@ -1,2 +1,2 @@
 ReadDebugString is a Windows CLI that reads messages from the Windows debugger
-Copyright (c) 2026, Matthew Wilson and Synesis Information Systems
+Copyright (c) 2025-2026, Matthew Wilson and Synesis Information Systems

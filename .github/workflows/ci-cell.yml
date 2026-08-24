@@ -39,6 +39,12 @@ jobs:
             mingw-w64-x86_64-cmake
             mingw-w64-x86_64-make
 
+      - name: Checkout STLSoft
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 https://github.com/synesissoftware/STLSoft "$RUNNER_TEMP/stlsoft"
+
       - name: Configure
         shell: bash
         run: |
@@ -49,9 +55,11 @@ jobs:
               -DCMAKE_BUILD_TYPE="${{ inputs.build-type }}" \
               -DCMAKE_C_COMPILER=gcc \
               -DCMAKE_CXX_COMPILER=g++ \
+              -DSTLSOFT="$RUNNER_TEMP/stlsoft" \
               -DBUILD_TESTING=OFF
           else
             cmake -B build -S . \
+              -DSTLSOFT="$RUNNER_TEMP/stlsoft" \
               -DBUILD_TESTING=OFF
           fi
 
@@ -86,4 +94,4 @@ jobs:
           set -euo pipefail
           PREFIX="${RUNNER_TEMP}/install-prefix"
           PROJECT="$(tr -d '[:space:]' < .sis/project_name.txt)"
-          "$PREFIX/bin/${PROJECT}.exe"
+          "$PREFIX/bin/${PROJECT}.exe" --version

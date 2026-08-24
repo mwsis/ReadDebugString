@@ -1,8 +1,0 @@
-#define READDEBUGSTRING_VER_MAJOR  0
-#define READDEBUGSTRING_VER_MINOR  0
-#define READDEBUGSTRING_VER_PATCH  1
-
-int main(void)
-{
-    return 0;
-}

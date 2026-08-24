@@ -3,7 +3,7 @@
 Reads messages from the Windows debugger.
 
 
-![C](https://img.shields.io/badge/C-00599C?style=flat&logo=c&logoColor=white)
+![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=flat&logo=cplusplus&logoColor=white)
 ![Windows](https://img.shields.io/badge/OS-Windows-0078D6?style=flat&logo=windows&logoColor=white)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![GitHub release](https://img.shields.io/github/v/release/sistools/ReadDebugString.svg)](https://github.com/sistools/ReadDebugString/releases/latest)
@@ -27,10 +27,8 @@ Reads messages from the Windows debugger.
 ## Introduction
 
 **ReadDebugString** is a small Windows-only utility that reads messages from
-the Windows debugger.
-
-The current implementation is a minimal buildable scaffold. Its debugger
-message-reading behaviour is still being developed.
+the Windows debugger, identifies the originating process, and writes formatted
+messages to standard error.
 
 
 ## Installation
@@ -42,6 +40,8 @@ cmake -S . -B _build
 cmake --build _build --config Release
 ```
 
+Detailed installation and usage instructions are in [INSTALL.md](./INSTALL.md).
+
 
 ## Components
 
@@ -50,8 +50,8 @@ The project creates a single executable program, **ReadDebugString**.
 
 ## Examples
 
-The current scaffold does not yet expose command-line options or produce
-debugger output.
+With no arguments, the program waits for and displays messages from the Windows
+debugger. Use `--help` or `--version` for commands that terminate immediately.
 
 
 ## Project Information

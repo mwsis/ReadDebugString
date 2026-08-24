@@ -1,0 +1,37 @@
+.\" Copyright (c) 2025-2026, Matthew Wilson and Synesis Information Systems
+.\"
+.TH READDEBUGSTRING 1 "August 2026" "readdebugstring 0.0.1" "User Commands"
+.SH NAME
+readdebugstring \- read messages from the Windows debug output stream
+.SH SYNOPSIS
+.B readdebugstring
+.br
+.B readdebugstring
+.B \-\-help
+.br
+.B readdebugstring
+.B \-\-version
+.SH DESCRIPTION
+.B readdebugstring
+waits for messages sent to the Windows debug output stream and writes each
+message to standard error. Output includes the originating process ID and
+process name when available.
+.PP
+With no arguments, the program continues waiting for debugger messages until
+it is terminated. This is a Windows-only command.
+.SH OPTIONS
+.TP
+.B \-\-help
+Display usage information and exit.
+.TP
+.B \-\-version
+Display version information and exit.
+.SH SEE ALSO
+.BR WriteDebugString (1)
+.SH REPORTING BUGS
+Report defects and feature requests at
+https://github.com/sistools/ReadDebugString.
+.SH AUTHOR
+Matthew Wilson and Synesis Information Systems
+.br
+Copyright (c) 2025\-2026, Matthew Wilson and Synesis Information Systems
